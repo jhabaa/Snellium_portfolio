@@ -1,5 +1,4 @@
 const demand = document.getElementById('demand-chart');
-
 new Chart(demand, {
   type: 'line',
   data: {
@@ -39,6 +38,73 @@ new Chart(demand, {
     }
   }
 });
+
+const rentability = document.getElementById('rentability-chart');
+new Chart(rentability, {
+  type: 'bar',
+  data: {
+    labels: ["Exercice avant impôts", "Resultats d'exploitation", "Financier", "Non récurrent", "Cash Flow"],
+    datasets: [
+      {
+        label: "2021",
+        backgroundColor: "rgba(255, 99, 132, 0.9)",
+        data: [ -498504, -497260, 204, -1448, -458456]
+      }, {
+        label: "2020",
+        backgroundColor: "rgba(88, 214, 141, 0.9)",
+        data: [ -380598, -402013, 12672, 8743, -357631]
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Rentabilité de l’entreprise EUCLIDES',
+            font: {
+                size: 20,
+                weight: 'bold',
+                fontfamily: 'Roboto'
+            }
+        }
+    }
+  }
+});
+
+const solvability = document.getElementById('solvability-chart');
+new Chart(solvability, {
+  type: 'bar',
+  data: {
+    labels: ["Fonds de roulement", "Besoin en fonds de roulement", "Position de trésorerie nette"],
+    datasets: [
+      {
+        label: "2021",
+        backgroundColor: "rgba(255, 99, 132, 0.9)",
+        data: [ 29577, 130316, -100739]
+      }, {
+        label: "2020",
+        backgroundColor: "rgba(88, 214, 141, 0.9)",
+        data: [ 34747, 17973, 16774]
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Solvabilité de l’entreprise EUCLIDES',
+            font: {
+                size: 20,
+                weight: 'bold',
+                fontfamily: 'Roboto'
+            }
+        }
+    }
+  }
+});
+
 
 const concurrent = document.getElementById('concurrent-chart');
 new Chart(concurrent, {
