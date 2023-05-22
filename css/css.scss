@@ -16,12 +16,16 @@ body{
         justify-content: space-between;
         align-items: center;
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         box-shadow: #000 0px 0px 10px;
-        scroll-padding-top: 100px;
+        scroll-padding-top: 140px;
         h1{
             font-family: 'Raleway', sans-serif;
             font-size: 20px;
             font-weight: 400;
+        }
+        img{
+            width: 150px;
         }
 
         nav{
@@ -48,12 +52,7 @@ body{
             padding: 0px;
             display: flex;
             flex-direction: column;
-            justify-content: baseline;
-            align-content: center;
-            align-items: start;
-            text-align: center;
-            position: sticky;
-            scroll-snap-align: center;
+            gap: 100px;
             .pitch{
                 width: 100%;
                 object-fit: cover;
@@ -65,34 +64,47 @@ body{
                     border-radius: 2rem;
                     z-index: 200;
                     box-shadow: #000 0px 0px 10px;
-                    scale: 2;
+                   
                     background-color: #000;
                 }
             }
-            
+            .card{
+                max-width: 1000px;
+                align-self: center;
+                background-color: #ffffffc6;
+                backdrop-filter: blur(10px);
+                box-shadow: #000 0px 0px 10px;
+                h1{
+                    padding: 0px;
+                    margin: 0px;
+                }
+                p{
+                    font-size: calc(1rem + 1vw);
+                    //font-weight: bold;
+                    color: #000000;
+                    white-space: pre-line;
+                    text-align: justify;
+                }
+            }
 
             .resume{
-                display: flex;
-                height: 100%;
-                align-items: center;
                 color: rgb(0, 0, 0);
                 backdrop-filter: blur(10px);
+                max-width: 1000px;
+                align-self: center;
                 p{
                     font-size: calc(1rem + 1vw);
                     gap: 30px;
                     //font-weight: bold;
                     color: #000000;
                     white-space: pre-line;
+                    text-align: justify;
                 }
             }
 
             video{
                 width: 100%;
                 align-self: center;
-                justify-self: center;
-                justify-content: center;
-                align-items: center;
-                align-content: center;
                 object-fit: cover;
                 height: 100%;
             }
@@ -109,68 +121,33 @@ body{
                 color: #585757;
                 font-weight: bold;
             }
-            &.row{
-                display: flex ;
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: start;
-                align-content: start;
-                //background-color: #585757;
-                color: #fff;
-                //flex-wrap: wrap;
-                width: 100vw;
-                .title{
-                    font-family: 'Vina Sans', cursive;
-                    //position: absolute;
-                    z-index: 1;
-                    //top: 0%;
-                    font-size: calc(1rem + 10vw);
-                    opacity: 0.1;
-                    font-style: italic;
-                }
-                .card{
-                    z-index: 2;
-                    background-color: #ffffff60;
-                    margin: 50px;
-                    color: #000;
-                    text-align: justify;
-                    backdrop-filter: blur(10px);
-                    box-shadow: #000 0px 0px 10px;
-                    //max-width: 400px;
-                    h1{
-                        font-size: calc(1rem + 3vw);
-                        font-family: "Ubuntu", sans-serif;
-                        position: absolute;
-                        color: #000;
-                        
-                        top: -100px;
-                    }
-                }
-            }
+            
             .title{
                 font-family: 'Vina Sans', cursive;
                 z-index: 1;
-                top: 0%;
+                //top: 0%;
                 font-size: calc(1rem + 10vw);
                 text-shadow: #292929 0px 0px 10px;
                 opacity: 0.4;
                 color: #ccc;
                 font-style: italic;
-                
+                align-self: center;
                 z-index:0;
-                
+                padding-inline: 50px;
+                padding-block: 50px;
+
             }
             .team{
-                margin-top: 100px;
+                width: 100%;
                 display: flex;
-                flex-wrap: nowrap;
+                flex-direction: column;
+                flex-wrap: wrap;
                 justify-content: center;
                 justify-items: center;
                 align-items: center;
                 align-content: center;
                 color: #000;
                 gap: 50px;
-                border-radius: 2rem;
                 z-index: 2;
             
                 h1{
@@ -179,9 +156,14 @@ body{
                     font-family: "Ubuntu", sans-serif;
                     color: #000000;
                     text-align: right;
-                    max-width: 400px;
-                    margin-left: 10%;
-                    text-shadow: #5dbeff 0px 0px 10px;
+                    width: 100%;
+                    text-justify: center;
+                    justify-self: center;
+                    align-self: center;
+                    align-items: center;
+                    justify-content: center;
+                   align-content: center;
+                    
                 }
                 .team-member{
                     display: flex;
@@ -335,9 +317,9 @@ body{
 
                 .marketing-card{
                     background:radial-gradient(ellipse at center, #ffffff00 0%, #ffffff 100%);
-                    max-width: 800px;
+                    
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     color: #141414;
                     margin: 10px;
                     //padding: 10px;
@@ -354,10 +336,10 @@ body{
                         object-fit: contain;
                     }
                     img{
-                        border-radius: 2rem 2rem 0px 0px;
+                        border-radius: 2rem 0px 2rem 0px;
                         padding: 0px;
                         margin: 0px;
-                        height: 50%;
+                        //width: 200px;
                     }
                 }
             }
@@ -369,16 +351,18 @@ body{
 
             .canvas{
                 display: flex;
-                height: 100vh;
-                width: 100%;
+                
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
                 flex-direction: column;
-                -ms-flex-align: center;
-                align-items: start;
+                padding: 0px;
+                margin: 0px;
+                //align-items: start;
                 justify-content: baseline;
                 //background-color: #1717179d;
                 color: #fff;
                 position: relative;
-                margin-top: 10%;
+               
                 .title-1{
                     color: rgb(0, 0, 0);
                     font-size: 100px;
@@ -395,13 +379,14 @@ body{
                 .canvas_objects{
                     //grid of 5 columns
                     display: grid;
-                    position: absolute;
+                    ///position: absolute;
                     grid-template-columns: repeat(5, 1fr);
                     grid-template-rows: repeat(5, 1fr);
                     grid-column-gap: 10px;
                     grid-row-gap: 10px;
-                    height: fit-content;
-                    top: 15%;
+                    
+                    text-align: center;
+                    
                     color: black;
                     .div1 { grid-area: 1 / 5 / 3 / 6; background-color: $background-color;
                         h1{
@@ -498,19 +483,13 @@ body{
             }
 
             .swot{
-                display: flex;
                 width: 100%;
-               //height: 100vh;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
-                .title{
-                    position: relative;
-                }
-
+                padding-bottom: 100px;
+                height: 100vh;
                 .swot_objects{
                     display: flex;
-                    width: 800px;
+                    max-width: 1000px;
+                    height: 400px;
                     backdrop-filter: blur(10px);
                     -webkit-backdrop-filter: blur(10px);
                     flex-wrap: wrap;
