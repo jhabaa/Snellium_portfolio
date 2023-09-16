@@ -29,24 +29,40 @@ body header img {
   width: 150px;
 }
 body header nav {
-  word-spacing: 20px;
-  padding-right: 50px;
+  word-spacing: 2vw;
+  padding-right: 5vw;
 }
 body header nav a {
   text-decoration: none;
   color: #000;
 }
+body .scroll-container {
+  margin-inline: 2vw;
+  padding-top: 2vh;
+}
 body .scroll-container .container {
   width: 100%;
+  height: fit-content;
   margin: 0px;
   padding: 0px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 100px;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  body .scroll-container .container {
+    gap: 50px;
+    flex-direction: column;
+  }
 }
 body .scroll-container .container .pitch {
   width: 100%;
   object-fit: cover;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,19 +70,45 @@ body .scroll-container .container .pitch {
 body .scroll-container .container .pitch iframe {
   border-radius: 2rem;
   z-index: 200;
+  width: 80vw;
+  height: 45vw;
   box-shadow: #000 0px 0px 10px;
   background-color: #000;
 }
+@media screen and (max-width: 600px) {
+  body .scroll-container .container .pitch iframe {
+    font-size: calc(2vw + 9vh);
+    height: 56.25vw;
+    padding-block: 0px;
+    width: 100vw;
+  }
+}
 body .scroll-container .container .card {
-  max-width: 1000px;
+  max-width: 600px;
   align-self: center;
   background-color: rgba(255, 255, 255, 0.7764705882);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: #000 0px 0px 10px;
+  text-justify: distribute;
+  text-align: justify;
+  text-align: center;
 }
 body .scroll-container .container .card h1 {
   padding: 0px;
   margin: 0px;
+  font-size: calc(1vh + 3vw);
+  color: #999999;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 600px) {
+  body .scroll-container .container .card h1 {
+    font-size: calc(2vw + 3vh);
+    color: #000000;
+    padding-block: 0px;
+    width: 100vw;
+    text-transform: none;
+  }
 }
 body .scroll-container .container .card p {
   font-size: calc(1rem + 1vw);
@@ -81,11 +123,17 @@ body .scroll-container .container .resume {
   align-self: center;
 }
 body .scroll-container .container .resume p {
-  font-size: calc(1rem + 1vw);
+  font-size: calc(1vh + 1vw);
   gap: 30px;
   color: #000000;
   white-space: pre-line;
   text-align: justify;
+}
+@media screen and (max-width: 600px) {
+  body .scroll-container .container .resume p {
+    font-size: calc(2vh + 1vw);
+    gap: 1vw;
+  }
 }
 body .scroll-container .container video {
   width: 100%;
@@ -108,7 +156,6 @@ body .scroll-container .container .title {
   font-family: "Vina Sans", cursive;
   z-index: 1;
   font-size: calc(1rem + 10vw);
-  text-shadow: #292929 0px 0px 10px;
   opacity: 0.4;
   color: #ccc;
   font-style: italic;
@@ -117,26 +164,45 @@ body .scroll-container .container .title {
   padding-inline: 50px;
   padding-block: 50px;
 }
+@media screen and (max-width: 600px) {
+  body .scroll-container .container .title {
+    font-size: calc(2vw + 9vh);
+    text-overflow: ellipsis;
+    padding-block: 0px;
+  }
+}
 body .scroll-container .container .team {
   width: 100%;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
-  color: #000;
+  flex-direction: row;
+  color: #3c3c3c;
   gap: 50px;
   z-index: 2;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(9, 88, 121) 4%, rgba(0, 212, 255, 0) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  margin-top: 100px;
+}
+@media screen and (max-width: 600px) {
+  body .scroll-container .container .team {
+    margin-top: 1vh;
+    gap: 1vw;
+  }
 }
 body .scroll-container .container .team h1 {
   display: flex;
-  font-size: calc(1rem + 3vw);
+  font-size: calc(1vh + 7vw);
   font-family: "Ubuntu", sans-serif;
-  color: #000000;
+  color: #fffcfc;
   text-align: right;
-  width: 100%;
+  width: 50%;
   text-justify: center;
   justify-self: center;
   align-self: center;
@@ -144,18 +210,42 @@ body .scroll-container .container .team h1 {
   justify-content: center;
   align-content: center;
 }
+@media screen and (max-width: 600px) {
+  body .scroll-container .container .team h1 {
+    width: 100%;
+    text-align: center;
+    justify-self: left;
+    align-items: baseline;
+    justify-content: left;
+    font-size: 6vh;
+    letter-spacing: 1vh;
+  }
+}
 body .scroll-container .container .team .team-member {
-  display: flex;
-  margin-left: 50px;
+  display: grid;
+  width: 100%;
+  height: 100%;
   flex-grow: 0;
-  height: 400px;
-  gap: 10px;
+  max-width: 500px;
+  max-height: 500px;
+  gap: 1vw;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  padding: 20px;
+}
+@media screen and (max-width: 600px) {
+  body .scroll-container .container .team .team-member {
+    padding-top: 0px;
+  }
 }
 body .scroll-container .container .team .team-member .member {
   overflow: hidden;
   display: flex;
-  width: 200px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
+  position: relative;
   flex-grow: 0;
   transition: all 0.5s ease-in-out;
   justify-content: left;
@@ -165,30 +255,34 @@ body .scroll-container .container .team .team-member .member {
   overflow: hidden;
   text-overflow: ellipsis;
   color: #d5d5d5;
+  z-index: 2;
+  border-radius: 0.5rem;
 }
 body .scroll-container .container .team .team-member .member .info {
   position: absolute;
-  height: 500px;
+  height: 100%;
   background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
   align-items: baseline;
   justify-content: left;
   align-content: baseline;
   text-align: left;
   color: #d5d5d5;
+  padding-left: 1vw;
 }
 body .scroll-container .container .team .team-member .member .info .name {
   font-size: calc(1rem + 1vw);
   color: rgb(255, 255, 255);
 }
 body .scroll-container .container .team .team-member .member .info p {
-  position: absolute;
+  position: relative;
   bottom: 0px;
   width: 100%;
   padding: 0px;
   margin: 0px;
-  align-self: flex-end;
+  align-self: flex-start;
   justify-self: left;
   color: #d5d5d5;
+  font-size: calc(0.2vw + 1.4vh);
 }
 body .scroll-container .container .team .team-member .member img {
   width: 100%;
@@ -198,24 +292,60 @@ body .scroll-container .container .team .team-member .member img {
   z-index: 0;
 }
 body .scroll-container .container .team .team-member .member:hover {
-  width: 400px;
+  width: 100%;
   flex-grow: 1;
+  transform: skew(0deg, 1deg);
   transition: all 0.5s ease-in-out;
   animation: infinite 0.5s;
 }
+body .scroll-container .container .team .team-member .div1 {
+  grid-area: 1/1/2/2;
+}
+body .scroll-container .container .team .team-member .div2 {
+  grid-area: 1/2/2/3;
+}
+body .scroll-container .container .team .team-member .div3 {
+  grid-area: 2/1/3/2;
+}
+body .scroll-container .container .team .team-member .div4 {
+  grid-area: 2/2/3/3;
+}
+body .scroll-container .container .team .team-member .div5 {
+  grid-area: 3/1/4/2;
+}
 body .scroll-container .container .charts {
-  width: 100%;
+  width: 100vw;
+}
+@media screen and (max-width: 600px) {
+  body .scroll-container .container .charts {
+    background-color: #000000;
+  }
 }
 body .scroll-container .container .charts .chart {
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
   margin-inline: 50px;
 }
+@media screen and (max-width: 600px) {
+  body .scroll-container .container .charts .chart {
+    flex-direction: column;
+    margin-inline: 0px;
+  }
+  body .scroll-container .container .charts .chart p {
+    color: #e9e9e9;
+  }
+}
 body .scroll-container .container .charts .chart canvas {
   max-width: 50%;
   max-height: 80%;
+}
+@media (max-width: 600px) {
+  body .scroll-container .container .charts .chart canvas {
+    max-width: 100%;
+    height: fit-content;
+    max-height: 100vh;
+  }
 }
 body .scroll-container .container .charts .chart .results {
   display: flex;
@@ -224,12 +354,18 @@ body .scroll-container .container .charts .chart .results {
   align-items: center;
   align-content: center;
   gap: 20px;
-  color: #000000;
   font-size: calc(1rem + 0.5vw);
   font-family: "Ubuntu", sans-serif;
   font-weight: bold;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  text-align: justify;
+}
+@media (max-width: 600px) {
+  body .scroll-container .container .charts .chart .results {
+    color: whitesmoke;
+    padding: 2vw;
+  }
 }
 body .scroll-container .container .charts .chart .results .little-chart {
   width: 500px;
@@ -244,6 +380,7 @@ body .scroll-container .container .charts .chart .results .little-chart {
 body .scroll-container .container .charts .chart .results .little-chart canvas {
   max-width: 100%;
   max-height: 100%;
+  background-color: #ffffff;
 }
 body .scroll-container .container .charts .chart .results .conclusion :nth-child(1) {
   color: #e9e9e9;
@@ -256,6 +393,11 @@ body .scroll-container .container .charts .ratios {
   justify-content: center;
   align-items: center;
   gap: 50px;
+}
+@media (max-width: 600px) {
+  body .scroll-container .container .charts .ratios {
+    color: whitesmoke;
+  }
 }
 body .scroll-container .container .charts .ratios .ratio {
   max-width: 400px;
@@ -276,13 +418,15 @@ body .scroll-container .container .cards-H {
 }
 body .scroll-container .container .cards-H .marketing-card {
   background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  max-width: 500px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   color: #141414;
   margin: 10px;
+  background-color: #ccc;
   border-radius: 2rem;
   box-shadow: inset 0px 0px 10px #000000;
-  height: min-content;
 }
 body .scroll-container .container .cards-H .marketing-card p {
   color: #242424;
@@ -315,7 +459,7 @@ body .scroll-container .container .canvas {
 }
 body .scroll-container .container .canvas .title-1 {
   color: rgb(0, 0, 0);
-  font-size: 100px;
+  font-size: calc(2vh + 3vw);
   font-family: "Raleway", sans-serif;
 }
 body .scroll-container .container .canvas .title-1::after {
@@ -325,12 +469,24 @@ body .scroll-container .container .canvas .title-1::after {
 }
 body .scroll-container .container .canvas .canvas_objects {
   display: grid;
+  align-content: baseline;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 1vw;
+  grid-row-gap: 1vw;
+  width: 100vw;
   text-align: center;
   color: black;
+}
+@media screen and (max-width: 600px) {
+  body .scroll-container .container .canvas .canvas_objects {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    background-color: #000000;
+    max-width: 500px;
+  }
 }
 body .scroll-container .container .canvas .canvas_objects .div1 {
   grid-area: 1/5/3/6;
@@ -441,9 +597,13 @@ body .scroll-container .container .canvas .canvas_objects .div9 p {
   padding: 0;
 }
 body .scroll-container .container .swot {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding-bottom: 100px;
-  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4vh;
 }
 body .scroll-container .container .swot .swot_objects {
   display: flex;
